@@ -1,4 +1,3 @@
-
 const products=[
  {size:'XS',max:5,length:'12 см',diameter:'Ø 1,7–2,2 см',character:'Карманный ценитель хороших палок',image:'assets-v2/product-xs.webp'},
  {size:'S',max:10,length:'13 см',diameter:'Ø 2,2–2,5 см',character:'Маленький, но серьёзный грызун',image:'assets-v2/product-s.webp'},
@@ -13,5 +12,4 @@ function update(value){const p=products.find(x=>value<=x.max);document.querySele
 range.addEventListener('input',e=>update(Number(e.target.value)));update(Number(range.value));
 const observer=new IntersectionObserver(entries=>entries.forEach(entry=>{if(entry.isIntersecting){entry.target.classList.add('visible');observer.unobserve(entry.target)}}),{threshold:.12});document.querySelectorAll('.fade').forEach(el=>observer.observe(el));
 const movable=document.querySelectorAll('.hero-float');window.addEventListener('pointermove',event=>{if(matchMedia('(prefers-reduced-motion: reduce)').matches)return;const x=event.clientX/innerWidth-.5,y=event.clientY/innerHeight-.5;movable.forEach((el,index)=>el.style.transform=`translate(${x*(index?18:-14)}px,${y*(index?14:-10)}px) rotate(${index?5:-6}deg)`)},{passive:true});
-
 
