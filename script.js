@@ -1,9 +1,9 @@
-const products=[
- {size:'XS',max:5,length:'12 см',diameter:'Ø 1,7–2,2 см',character:'Карманный ценитель хороших палок',image:'assets-v2/product-xs.webp'},
- {size:'S',max:10,length:'13 см',diameter:'Ø 2,2–2,5 см',character:'Маленький, но серьёзный грызун',image:'assets-v2/product-s.webp'},
- {size:'M',max:15,length:'18 см',diameter:'Ø 3,2–3,7 см',character:'Уверенный палкоед среднего звена',image:'assets-v2/product-m.webp'},
- {size:'L',max:20,length:'21 см',diameter:'Ø 4,2–5,2 см',character:'Опытный специалист по погрызушкам',image:'assets-v2/product-l.webp'},
- {size:'XL',max:Infinity,length:'22 см',diameter:'Ø 5–6 см',character:'Профессиональный уничтожитель скуки',image:'assets-v2/product-xl.webp'}
+﻿const products=[
+ {size:'XS',max:5,length:'12 см',diameter:'Ø 1,7–2,2 см',character:'Карманный ценитель хороших палок',image:'assets-v2/product-xs.webp?v=c846bd3'},
+ {size:'S',max:10,length:'13 см',diameter:'Ø 2,2–2,5 см',character:'Маленький, но серьёзный грызун',image:'assets-v2/product-s.webp?v=c846bd3'},
+ {size:'M',max:15,length:'18 см',diameter:'Ø 3,2–3,7 см',character:'Уверенный палкоед среднего звена',image:'assets-v2/product-m.webp?v=c846bd3'},
+ {size:'L',max:20,length:'21 см',diameter:'Ø 4,2–5,2 см',character:'Опытный специалист по погрызушкам',image:'assets-v2/product-l.webp?v=c846bd3'},
+ {size:'XL',max:Infinity,length:'22 см',diameter:'Ø 5–6 см',character:'Профессиональный уничтожитель скуки',image:'assets-v2/product-xl.webp?v=c846bd3'}
 ];
 const grid=document.querySelector('#productGrid');
 grid.innerHTML=products.map(p=>`<article class="product" data-size="${p.size}"><img src="${p.image}" alt="Палочка Coffee Wood ${p.size}"><div class="product-head"><h3>${p.size}</h3></div><p class="product-character">${p.character}</p><p>${p.length}<br>${p.diameter}</p><span class="product-status">Скоро</span></article>`).join('');
@@ -12,4 +12,5 @@ function update(value){const p=products.find(x=>value<=x.max);document.querySele
 range.addEventListener('input',e=>update(Number(e.target.value)));update(Number(range.value));
 const observer=new IntersectionObserver(entries=>entries.forEach(entry=>{if(entry.isIntersecting){entry.target.classList.add('visible');observer.unobserve(entry.target)}}),{threshold:.12});document.querySelectorAll('.fade').forEach(el=>observer.observe(el));
 const movable=document.querySelectorAll('.hero-float');window.addEventListener('pointermove',event=>{if(matchMedia('(prefers-reduced-motion: reduce)').matches)return;const x=event.clientX/innerWidth-.5,y=event.clientY/innerHeight-.5;movable.forEach((el,index)=>el.style.transform=`translate(${x*(index?18:-14)}px,${y*(index?14:-10)}px) rotate(${index?5:-6}deg)`)},{passive:true});
+
 
