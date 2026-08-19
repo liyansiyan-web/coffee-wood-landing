@@ -60,11 +60,8 @@ function applyTheme(theme, announce = false) {
   themeButtons.forEach(button => button.setAttribute('aria-pressed', String(button.dataset.themeValue === selected)));
   themeMeta.setAttribute('content', selected === 'hooligan' ? '#e04f2f' : '#123629');
   if (announce) themeStatus.textContent = selected === 'hooligan' ? 'Включён хулиганский дизайн' : 'Включён редакционный дизайн';
-  try { localStorage.setItem('coffeeWoodTheme', selected); } catch (error) { /* Сайт работает и без сохранения настройки. */ }
 }
-let savedTheme = 'editorial';
-try { savedTheme = localStorage.getItem('coffeeWoodTheme') || 'editorial'; } catch (error) { /* Используем дизайн по умолчанию. */ }
-applyTheme(savedTheme);
+applyTheme('editorial');
 themeButtons.forEach(button => button.addEventListener('click', () => applyTheme(button.dataset.themeValue, true)));
 
 const menuToggle = document.querySelector('.mobile-menu-toggle');
