@@ -19,7 +19,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&family=Prata&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css?v=lesson2-size-visual-fix">
+  <link rel="stylesheet" href="styles.css?v=lesson2-carousel-fix">
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -178,8 +178,16 @@
         </div>
       </div>
 
-      <p class="product-scroll-hint" aria-hidden="true">Размеры можно листать →</p>
-      <div class="product-grid" id="productGrid" aria-label="Пять размеров Coffee Wood"></div>
+      <div class="product-carousel">
+        <div class="product-carousel-head">
+          <p class="product-scroll-hint">Листай размеры</p>
+          <div class="carousel-controls" aria-label="Перелистывание размеров">
+            <button class="carousel-button carousel-prev" type="button" aria-label="Предыдущий размер">←</button>
+            <button class="carousel-button carousel-next" type="button" aria-label="Следующий размер">→</button>
+          </div>
+        </div>
+        <div class="product-grid" id="productGrid" tabindex="0" aria-label="Пять размеров Coffee Wood"></div>
+      </div>
       <p class="size-note">Размерная сетка носит рекомендательный характер. Если собака грызёт особенно интенсивно, рассмотрите размер больше.</p>
     </section>
 
@@ -233,7 +241,7 @@
     <p>Концепт-лендинг палочки кофейного дерева</p>
     <span>Сайт-визитка · продажи появятся позже</span>
   </footer>
-  <script src="script.js?v=lesson2-editorial-default"></script>
+  <script src="script.js?v=lesson2-carousel-fix"></script>
 </body>
 </html>
 

@@ -19,6 +19,64 @@ grid.innerHTML = products.map(product => `
   </article>
 `).join('');
 
+const carousel = grid.closest('.product-carousel');
+const previousButton = carousel.querySelector('.carousel-prev');
+const nextButton = carousel.querySelector('.carousel-next');
+
+function carouselStep() {
+  const card = grid.querySelector('.product');
+  if (!card) return grid.clientWidth;
+  const gap = parseFloat(getComputedStyle(grid).columnGap) || 0;
+  return card.getBoundingClientRect().width + gap;
+}
+
+function updateCarouselControls() {
+  const lastScrollPosition = Math.max(0, grid.scrollWidth - grid.clientWidth);
+  previousButton.disabled = grid.scrollLeft <= 2;
+  nextButton.disabled = grid.scrollLeft >= lastScrollPosition - 2;
+  carousel.classList.toggle('at-start', previousButton.disabled);
+  carousel.classList.toggle('at-end', nextButton.disabled);
+}
+
+function moveCarousel(direction) {
+  grid.scrollBy({
+    left: carouselStep() * direction,
+    behavior: matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth'
+  });
+}
+
+previousButton.addEventListener('click', () => moveCarousel(-1));
+nextButton.addEventListener('click', () => moveCarousel(1));
+grid.addEventListener('scroll', () => requestAnimationFrame(updateCarouselControls), {passive:true});
+grid.addEventListener('keydown', event => {
+  if (event.key !== 'ArrowLeft' && event.key !== 'ArrowRight') return;
+  event.preventDefault();
+  moveCarousel(event.key === 'ArrowRight' ? 1 : -1);
+});
+
+let dragStart = null;
+grid.addEventListener('pointerdown', event => {
+  if (event.pointerType !== 'mouse' || event.button !== 0) return;
+  dragStart = {x:event.clientX, scrollLeft:grid.scrollLeft, pointerId:event.pointerId};
+  grid.setPointerCapture(event.pointerId);
+  grid.classList.add('is-dragging');
+});
+grid.addEventListener('pointermove', event => {
+  if (!dragStart || event.pointerId !== dragStart.pointerId) return;
+  grid.scrollLeft = dragStart.scrollLeft - (event.clientX - dragStart.x);
+});
+function stopCarouselDrag(event) {
+  if (!dragStart || event.pointerId !== dragStart.pointerId) return;
+  grid.classList.remove('is-dragging');
+  dragStart = null;
+}
+grid.addEventListener('pointerup', stopCarouselDrag);
+grid.addEventListener('pointercancel', stopCarouselDrag);
+
+if ('ResizeObserver' in window) new ResizeObserver(updateCarouselControls).observe(grid);
+else window.addEventListener('resize', updateCarouselControls);
+requestAnimationFrame(updateCarouselControls);
+
 const range = document.querySelector('#weight');
 function updateRecommendation(value, scrollCard = false) {
   const product = products.find(item => value <= item.max);
@@ -31,7 +89,8 @@ function updateRecommendation(value, scrollCard = false) {
     const isActive = card.dataset.size === product.size;
     card.classList.toggle('active', isActive);
     if (isActive && scrollCard && matchMedia('(max-width: 960px)').matches) {
-      card.scrollIntoView({behavior:'smooth', block:'nearest', inline:'center'});
+      const left = card.offsetLeft - (grid.clientWidth - card.clientWidth) / 2;
+      grid.scrollTo({left, behavior:'smooth'});
     }
   });
 }
