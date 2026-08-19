@@ -51,7 +51,7 @@
 .theme-panel>div{display:flex;gap:4px}
 .theme-panel button{border:0;border-radius:999px;padding:8px 11px;background:transparent;color:rgba(255,255,255,.72);font:600 .62rem Manrope,sans-serif;cursor:pointer;transition:.2s}
 .theme-panel button[aria-pressed="true"]{background:var(--paper);color:var(--green);box-shadow:0 3px 12px rgba(0,0,0,.13)}
-.product-grid{scroll-snap-type:x proximity;scrollbar-width:thin}.product{scroll-snap-align:start}
+.product-grid{scroll-snap-type:x proximity;scrollbar-width:thin}.product{scroll-snap-align:start}.product img{height:auto}
 .header{overflow:visible}
 
 html[data-theme="hooligan"]{--green:#163d2b;--green2:#215c3f;--cream:#fff0c3;--paper:#fffaf0;--ink:#262016;--muted:#6e6254;--sand:#ffb84d;--line:rgba(38,32,22,.18)}
@@ -78,6 +78,44 @@ html[data-theme="hooligan"] .walk-card{border:2px solid var(--ink);box-shadow:10
 html[data-theme="hooligan"] .origin-photo img{border:3px solid var(--ink);box-shadow:10px 10px 0 var(--sand)}
 html[data-theme="hooligan"] .final::after{background:linear-gradient(90deg,rgba(22,61,43,.9),rgba(224,79,47,.12) 70%)}
 html[data-theme="hooligan"] .theme-panel{background:#e04f2f;border:2px solid var(--ink);box-shadow:5px 5px 0 var(--ink)}
+html[data-theme="hooligan"] .hero::before{content:"100% ПАЛКА";position:absolute;z-index:4;right:6vw;top:9%;padding:13px 18px;background:#ffb84d;color:var(--ink);border:2px solid var(--ink);border-radius:50%;font-size:.72rem;font-weight:900;letter-spacing:.08em;transform:rotate(9deg);box-shadow:6px 6px 0 #e04f2f;animation:stickerBob 3.4s ease-in-out infinite}
+html[data-theme="hooligan"] .hero h1{text-shadow:3px 3px 0 rgba(224,79,47,.8)}
+html[data-theme="hooligan"] .header-link{padding:5px 10px;background:#ffb84d;border:2px solid var(--ink);box-shadow:3px 3px 0 var(--ink);transform:rotate(1deg)}
+html[data-theme="hooligan"] .trust-strip{background:#fff0c3}
+html[data-theme="hooligan"] .trust-strip b{display:inline-block;color:#e04f2f;transform:rotate(-3deg)}
+html[data-theme="hooligan"] .section-label span{background:#e04f2f;color:#fff;border:2px solid var(--ink);box-shadow:3px 3px 0 var(--ink);transform:rotate(-7deg)}
+html[data-theme="hooligan"] .intro-copy{padding:24px;background:#fff0c3;border:2px dashed var(--ink);transform:rotate(.5deg)}
+html[data-theme="hooligan"] .benefit-cards article{transition:transform .18s ease,box-shadow .18s ease}
+html[data-theme="hooligan"] .benefit-cards article:hover{transform:translateY(-7px) rotate(1deg);box-shadow:11px 11px 0 #e04f2f}
+html[data-theme="hooligan"] .irony h2{text-transform:uppercase;text-shadow:3px 3px 0 rgba(255,240,195,.7)}
+html[data-theme="hooligan"] .irony-list div{border-top:2px solid rgba(38,32,22,.45)}
+html[data-theme="hooligan"] .fiber-copy li::before{content:"КУСЬ ";color:#ffb84d;font-size:.58rem;font-weight:900;letter-spacing:.08em}
+html[data-theme="hooligan"] .sizes{position:relative;overflow:clip}
+html[data-theme="hooligan"] .sizes::before{content:"КУСЬ-ТЕСТ";position:absolute;right:4vw;top:72px;z-index:2;padding:11px 20px;background:#e04f2f;color:#fff;border:2px solid var(--ink);font-size:.68rem;font-weight:900;letter-spacing:.12em;transform:rotate(7deg);box-shadow:5px 5px 0 var(--ink)}
+html[data-theme="hooligan"] .size-visual{border:3px solid var(--ink);border-radius:42px 14px 42px 14px;box-shadow:12px 12px 0 #ffb84d;transform:rotate(-.35deg)}
+html[data-theme="hooligan"] .picker{background:#fff0c3;border-radius:14px 34px 14px 34px}
+html[data-theme="hooligan"] .recommendation strong{color:#e04f2f;text-shadow:2px 2px 0 #ffb84d}
+html[data-theme="hooligan"] .product-grid{align-items:start;gap:16px}
+html[data-theme="hooligan"] .product{align-self:start;min-height:0;padding:14px;border-radius:15px;transition:transform .18s ease,box-shadow .18s ease}
+html[data-theme="hooligan"] .product:nth-child(1){background:#fff0c3;transform:rotate(-1.2deg)}
+html[data-theme="hooligan"] .product:nth-child(2){background:#fff;transform:rotate(.8deg)}
+html[data-theme="hooligan"] .product:nth-child(3){background:#d7ead8;transform:rotate(-.5deg)}
+html[data-theme="hooligan"] .product:nth-child(4){background:#ffd8cf;transform:rotate(1deg)}
+html[data-theme="hooligan"] .product:nth-child(5){background:#fff0c3;transform:rotate(-.7deg)}
+html[data-theme="hooligan"] .product img{height:auto;aspect-ratio:1;object-fit:contain;background:#fff;border:1px dashed rgba(38,32,22,.35);border-radius:11px}
+html[data-theme="hooligan"] .product h3{font-family:Manrope,sans-serif;font-weight:900;color:#e04f2f}
+html[data-theme="hooligan"] .product-status{background:#e04f2f;color:#fff;border:2px solid var(--ink);font-weight:800;transform:rotate(-2deg)}
+html[data-theme="hooligan"] .product:hover{transform:translateY(-8px) rotate(1.4deg);box-shadow:10px 10px 0 #e04f2f}
+html[data-theme="hooligan"] .product.active{transform:translateY(-7px) rotate(-1.4deg)}
+html[data-theme="hooligan"] .walk-card{transform:translateY(-50%) rotate(-1deg);background:#fff0c3;border-radius:10px 28px 10px 28px}
+html[data-theme="hooligan"] .care{position:relative;overflow:clip;background:#ffb84d;border-block:3px solid var(--ink)}
+html[data-theme="hooligan"] .care::before{content:"ИНСТРУКЦИЯ ДЛЯ ЛЮДЕЙ";position:absolute;right:-35px;top:34px;padding:10px 48px;background:#215c3f;color:#fff;border-block:2px solid var(--ink);font-size:.62rem;font-weight:900;letter-spacing:.1em;transform:rotate(7deg)}
+html[data-theme="hooligan"] .care-grid article:nth-child(odd){background:#fff0c3;transform:rotate(-.7deg)}
+html[data-theme="hooligan"] .care-grid article:nth-child(even){background:#fff;transform:rotate(.7deg)}
+html[data-theme="hooligan"] .care-grid b{display:grid;place-items:center;width:34px;height:34px;background:#e04f2f;color:#fff;border:2px solid var(--ink);border-radius:50%;box-shadow:3px 3px 0 var(--ink)}
+html[data-theme="hooligan"] .final-copy h2{text-shadow:4px 4px 0 #e04f2f}
+html[data-theme="hooligan"] footer{background:#fff0c3;border-top:3px solid var(--ink)}
+@keyframes stickerBob{50%{transform:translateY(-8px) rotate(5deg)}}
 
 @media(max-width:960px){
   .header{gap:18px}
@@ -97,7 +135,14 @@ html[data-theme="hooligan"] .theme-panel{background:#e04f2f;border:2px solid var
   .theme-panel button{padding:7px 9px;font-size:.56rem}
   html[data-theme="hooligan"] .benefit-cards article{transform:none!important}
   html[data-theme="hooligan"] .hero-shade{background:linear-gradient(0deg,rgba(22,61,43,.94),rgba(22,61,43,.55) 50%,rgba(255,184,77,.05) 83%)}
+  html[data-theme="hooligan"] .hero::before{right:18px;top:90px;padding:10px 13px;font-size:.58rem}
+  html[data-theme="hooligan"] .sizes::before{right:-12px;top:34px;font-size:.56rem}
+  html[data-theme="hooligan"] .size-visual{transform:none;box-shadow:7px 7px 0 #ffb84d}
+  html[data-theme="hooligan"] .product{transform:none!important}
+  html[data-theme="hooligan"] .walk-card{transform:none}
+  html[data-theme="hooligan"] .care::before{right:-54px;top:26px;font-size:.52rem}
+  html[data-theme="hooligan"] .care-grid article{transform:none!important}
 }
-@media(prefers-reduced-motion:reduce){.js .fade{opacity:1;transform:none;transition:none}}
+@media(prefers-reduced-motion:reduce){.js .fade{opacity:1;transform:none;transition:none}html[data-theme="hooligan"] .hero::before{animation:none}}
 
 
