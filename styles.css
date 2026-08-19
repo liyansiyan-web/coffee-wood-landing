@@ -51,7 +51,7 @@
 .theme-panel>div{display:flex;gap:4px}
 .theme-panel button{border:0;border-radius:999px;padding:8px 11px;background:transparent;color:rgba(255,255,255,.72);font:600 .62rem Manrope,sans-serif;cursor:pointer;transition:.2s}
 .theme-panel button[aria-pressed="true"]{background:var(--paper);color:var(--green);box-shadow:0 3px 12px rgba(0,0,0,.13)}
-.product-grid{scroll-snap-type:x proximity;scrollbar-width:thin}.product{scroll-snap-align:start}.product img{height:auto}
+.product-grid{scroll-snap-type:x proximity;scrollbar-width:thin}.product{scroll-snap-align:start}.product img,.origin-photo img{height:auto}
 .header{overflow:visible}
 
 html[data-theme="hooligan"]{--green:#163d2b;--green2:#215c3f;--cream:#fff0c3;--paper:#fffaf0;--ink:#262016;--muted:#6e6254;--sand:#ffb84d;--line:rgba(38,32,22,.18)}
