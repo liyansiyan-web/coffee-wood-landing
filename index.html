@@ -1,30 +1,62 @@
-﻿<!doctype html>
+<!doctype html>
 <html lang="ru">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="Coffee Wood — натуральная жевательная палочка из кофейного дерева для собак. Пять размеров от XS до XL.">
+  <meta name="theme-color" content="#123629">
+  <link rel="canonical" href="https://liyansiyan-web.github.io/coffee-wood-landing/">
+  <meta property="og:locale" content="ru_RU">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Coffee Wood — хорошая палка для хорошей собаки">
+  <meta property="og:description" content="Да, это палка. Но очищенная, отшлифованная и подобранная по размеру собаки.">
+  <meta property="og:url" content="https://liyansiyan-web.github.io/coffee-wood-landing/">
+  <meta property="og:image" content="https://liyansiyan-web.github.io/coffee-wood-landing/assets-v2/hero-dog.webp">
+  <meta property="og:image:alt" content="Собака с палочкой Coffee Wood">
+  <meta name="twitter:card" content="summary_large_image">
   <title>Coffee Wood — хорошая палка для хорошей собаки</title>
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&family=Prata&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css?v=final-55a043d-2">
+  <link rel="stylesheet" href="styles.css?v=lesson2">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Product",
+    "name": "Палочка кофейного дерева Coffee Wood",
+    "description": "Натуральная жевательная игрушка из кофейного дерева для собак, представленная в пяти размерах от XS до XL.",
+    "image": "https://liyansiyan-web.github.io/coffee-wood-landing/assets-v2/hero-dog.webp",
+    "brand": {"@type": "Brand", "name": "Coffee Wood"},
+    "category": "Игрушки для собак",
+    "audience": {"@type": "Audience", "audienceType": "Владельцы собак"}
+  }
+  </script>
 </head>
 <body>
   <header class="header">
-    <a class="logo" href="#top"><img src="assets-v2/logo.png?v=c846bd3" alt="Кофейное дерево — Coffee Wood"></a>
-    <nav aria-label="Навигация">
+    <a class="logo" href="#top" aria-label="Coffee Wood — к началу страницы"><img src="assets-v2/logo.png?v=c846bd3" width="1364" height="364" alt="Кофейное дерево — Coffee Wood"></a>
+    <nav id="primaryNav" aria-label="Навигация">
       <a href="#benefits">О палочке</a>
       <a href="#sizes">Размеры</a>
       <a href="#care">Как использовать</a>
     </nav>
-    <a class="mobile-header-link" href="#sizes">Размеры</a>
+    <button class="mobile-menu-toggle" type="button" aria-expanded="false" aria-controls="primaryNav">Меню</button>
     <a class="header-link" href="#sizes">Подобрать размер</a>
   </header>
 
+  <aside class="theme-panel" aria-label="Переключатель дизайна">
+    <span>Режим палки</span>
+    <div role="group" aria-label="Выбери оформление">
+      <button type="button" data-theme-value="editorial" aria-pressed="true">Редакционный</button>
+      <button type="button" data-theme-value="hooligan" aria-pressed="false">Хулиганский</button>
+    </div>
+    <span class="sr-only" id="themeStatus" aria-live="polite"></span>
+  </aside>
+
   <main id="top">
     <section class="hero">
-      <img class="hero-image" src="assets-v2/hero-dog.webp?v=c846bd3" alt="Собака с палочкой кофейного дерева в светлом интерьере">
+      <img class="hero-image" src="assets-v2/hero-dog.webp?v=c846bd3" width="1536" height="1024" fetchpriority="high" decoding="async" alt="Собака с палочкой кофейного дерева в светлом интерьере">
       <div class="hero-shade"></div>
       <div class="hero-content fade">
         <p class="kicker">Натуральная игрушка для собак</p>
@@ -108,7 +140,7 @@
     <div class="ticker" aria-hidden="true"><div><span>НЕ ПЕРВАЯ ВСТРЕЧНАЯ</span><i>✦</i><span>МЕБЕЛЬ МОЖЕТ ВЫДОХНУТЬ</span><i>✦</i><span>НАТУРАЛЬНО ГРЫЗТЬ НЕ ЗАПРЕТИШЬ</span><i>✦</i><span>ПАЛКА ПО СОБАКЕ</span><i>✦</i><span>НЕ ПЕРВАЯ ВСТРЕЧНАЯ</span><i>✦</i><span>МЕБЕЛЬ МОЖЕТ ВЫДОХНУТЬ</span><i>✦</i><span>НАТУРАЛЬНО ГРЫЗТЬ НЕ ЗАПРЕТИШЬ</span><i>✦</i><span>ПАЛКА ПО СОБАКЕ</span><i>✦</i></div></div>
 
     <section class="fiber">
-      <div class="fiber-image-wrap fade"><img src="assets-v2/fibers.webp?v=c846bd3" alt="Кофейная древесина, переходящая в мягкие волокна"></div>
+      <div class="fiber-image-wrap fade"><img src="assets-v2/fibers.webp?v=c846bd3" width="1536" height="1024" loading="lazy" decoding="async" alt="Кофейная древесина, переходящая в мягкие волокна"></div>
       <div class="fiber-copy fade">
         <p class="kicker light">Собака грызёт — волокна работают</p>
         <h2>Эта палка ещё и зубы чистит</h2>
@@ -128,13 +160,14 @@
         <p>Пять размеров — от карманного ценителя хороших палок до профессионального уничтожителя скуки. Укажи вес собаки, а мы подскажем, с какой палкой ей будет удобнее проводить переговоры.</p>
       </div>
 
-      <div class="size-visual fade"><img src="assets-v2/five-sizes.webp?v=c846bd3" alt="Пять размеров палочек кофейного дерева от XS до XL"></div>
+      <div class="size-visual fade"><img src="assets-v2/five-sizes.webp?v=c846bd3" width="1536" height="1024" loading="lazy" decoding="async" alt="Пять размеров палочек кофейного дерева от XS до XL"></div>
 
       <div class="picker fade">
         <div class="picker-control">
           <label for="weight">Вес собаки <output id="weightOutput">8 кг</output></label>
-          <input id="weight" type="range" min="1" max="45" value="8">
+          <input id="weight" type="range" min="1" max="45" value="8" aria-describedby="weightHelp">
           <div class="range-label"><span>1 кг</span><span>45+ кг</span></div>
+          <p class="sr-only" id="weightHelp">Передвигай ползунок, чтобы подобрать ориентировочный размер палочки по весу собаки.</p>
         </div>
         <div class="recommendation" aria-live="polite">
           <div><span>Наш ориентир</span><strong id="recSize">S</strong></div>
@@ -145,12 +178,13 @@
         </div>
       </div>
 
-      <div class="product-grid" id="productGrid"></div>
+      <p class="product-scroll-hint" aria-hidden="true">Размеры можно листать →</p>
+      <div class="product-grid" id="productGrid" aria-label="Пять размеров Coffee Wood"></div>
       <p class="size-note">Размерная сетка носит рекомендательный характер. Если собака грызёт особенно интенсивно, рассмотрите размер больше.</p>
     </section>
 
     <section class="walk">
-      <img src="assets-v2/walk.webp?v=c846bd3" alt="Собака несёт кофейную палочку на прогулке">
+      <img src="assets-v2/walk.webp?v=c846bd3" width="1536" height="1024" loading="lazy" decoding="async" alt="Собака несёт кофейную палочку на прогулке">
       <div class="walk-card fade">
         <p class="kicker">Переговоры с мебелью окончены</p>
         <h2>Тапочки официально<br>получили шанс.</h2>
@@ -159,7 +193,7 @@
     </section>
 
     <section class="origin section">
-      <div class="origin-photo fade"><img src="assets-v2/real-basket.webp?v=c846bd3" alt="Настоящие палочки Coffee Wood разных размеров"></div>
+      <div class="origin-photo fade"><img src="assets-v2/real-basket.webp?v=c846bd3" width="1600" height="1600" loading="lazy" decoding="async" alt="Настоящие палочки Coffee Wood разных размеров"></div>
       <div class="origin-copy fade">
         <div class="section-label"><span>03</span> Происхождение</div>
         <p class="kicker">Карьерный рост одной ветки</p>
@@ -190,17 +224,18 @@
         <h2>Да, это всё ещё палка.<br>И да, она того стоит.</h2>
         <a class="btn cream" href="#sizes">Подобрать палку по собаке</a>
       </div>
-      <img src="assets-v2/hero-dog.webp?v=c846bd3" alt="Собака с игрушкой Coffee Wood">
+      <img src="assets-v2/hero-dog.webp?v=c846bd3" width="1536" height="1024" loading="lazy" decoding="async" alt="Собака с игрушкой Coffee Wood">
     </section>
   </main>
 
   <footer>
-    <img src="assets-v2/logo.png?v=c846bd3" alt="Coffee Wood">
+    <img src="assets-v2/logo.png?v=c846bd3" width="1364" height="364" loading="lazy" decoding="async" alt="Coffee Wood">
     <p>Концепт-лендинг палочки кофейного дерева</p>
     <span>Сайт-визитка · продажи появятся позже</span>
   </footer>
-  <script src="script.js"></script>
+  <script src="script.js?v=lesson2"></script>
 </body>
 </html>
+
 
 
